@@ -15,6 +15,6 @@ public enum RiskRating {
 
     @Override
     public String toString() {
-        return String.format("[%s, %s]", name(), modifier);
+        return String.format("[rating=%s,modifier=%s]", name(), modifier);
     }
 }

@@ -39,6 +39,7 @@ public class ArbitratorAppService {
     private Evaluation.Evaluand evaluand(Request request) {
         return Evaluation.Evaluand.builder()
                 .amount(request.getAmount())
+                .period(request.getPeriod())
                 .modifier(getCreditModifier(request.getIdCode()))
                 .build();
     }
@@ -53,7 +54,7 @@ public class ArbitratorAppService {
 
     private int getCreditModifier(String personalIdCode) {
         RiskRating rating = ratingsService.getRating(personalIdCode);
-        log.info("Found risk rating {} for person {}", rating, personalIdCode);
+        log.info("Found risk rating for person {} {}", personalIdCode, rating);
 
         return rating.modifier;
     }
