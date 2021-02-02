@@ -1,0 +1,12 @@
+[RiskRatingCheck]
+* Credit modifier 100 acceptable
+* PASS
+
+[OfferPeriodMaxLoanAmount]
+* Evaluand's loan potential (1200) for the requested period (12) is too low
+* FAIL
+
+[OfferNextAcceptableLoanPeriod]
+* Adjusting amount 6500 -> 2000
+* Adjusting period 12 -> 20
+* PASS

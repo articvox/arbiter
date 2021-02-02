@@ -35,7 +35,16 @@ dependencies {
 }
 
 test {
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
     useJUnitPlatform()
+}
+
+processTestResources {
+    from ('src/test/java') {
+        include '**/*'
+    }
 }
 
 task buildUI(type: CommonExec) {
@@ -52,7 +61,6 @@ task buildApp(dependsOn: ['buildUI', 'copyUI']) {
 }
 
 build.dependsOn buildApp
-
 
 class CommonExec extends Exec {
 
