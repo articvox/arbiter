@@ -6,11 +6,12 @@
           <i class="fa fa-anchor fa-3x"></i>
         </p>
         <div *ngIf="proposal && proposal.approved">
-          <h1 class="mb-0 mt-3 display-4">€ {{ proposal.amount }}</h1>
-          <h5 class="mb-4 font-weight-light">{{ proposal.period }} kuud<i class="fab fa-sass fa-2x text-cyan"></i></h5>
+          <h2>Super! Saame pakkuda järgmist:</h2>
+          <h1 class="mb-1 mt-3 display-4">€ {{ proposal.amount }}</h1>
+          <h5 class="mt-3">Laenuperiood: {{ proposal.period }} kuud<i class="fab fa-sass fa-2x text-cyan"></i></h5>
         </div>
         <div *ngIf="proposal && !proposal.approved">
-          <h1 class="mb-0 mt-3 display-4">Kahjuks ei ole pakkumist võimalik teha</h1>
+          <h3 class="mb-0 mt-3 display-4">Kahjuks ei ole pakkumist võimalik teha</h3>
         </div>
         <div *ngIf="!proposal">
           <h1 class="mb-0 mt-3 display-4">Küsi pakkumist!</h1>
@@ -57,7 +58,7 @@
         <div class="form-group">
           <label for="idCode">Periood</label>
           <input id="period" name="period" class="form-control rounded-0" type="number"
-                 required placeholder="Kuudes" min="12" max="60"
+                 required placeholder="12 - 60 kuud" min="12" max="60"
                  [ngClass]="{ 'is-invalid': loanForm.submitted && period.invalid }"
                  [(ngModel)]="data.period" #period="ngModel">
           <div *ngIf="period.invalid && (period.dirty || period.touched)"
