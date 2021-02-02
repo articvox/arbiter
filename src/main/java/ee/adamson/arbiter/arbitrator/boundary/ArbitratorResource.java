@@ -16,6 +16,9 @@ public class ArbitratorResource {
 
     @PostMapping("/negotiate")
     public Proposal negotiate(@RequestBody Request request) {
+        if (!RequestValidator.isValid(request)) {
+            return Proposal.unapproved();
+        }
         return arbitratorAppService.negotiate(request);
     }
 

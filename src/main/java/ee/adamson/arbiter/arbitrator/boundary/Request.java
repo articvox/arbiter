@@ -8,5 +8,5 @@ import java.math.BigDecimal;
 public class Request {
     private String idCode;
     private BigDecimal amount;
-    private int period;
+    private Integer period;
 }

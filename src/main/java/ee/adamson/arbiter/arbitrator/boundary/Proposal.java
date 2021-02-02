@@ -20,4 +20,10 @@ public class Proposal {
     public String toString() {
         return ReflectionToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
     }
+
+    public static Proposal unapproved() {
+        return Proposal
+                .builder()
+                .build();
+    }
 }
