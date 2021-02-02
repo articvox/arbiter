@@ -1,9 +1,13 @@
-FROM openjdk:14-jdk-alpine
-ENV TZ="Europe/Tallinn"
+FROM adoptopenjdk/openjdk14
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+  && apt-get update -qq && apt-get install -qq --no-install-recommends nodejs \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /arbiter
+COPY [".", "arbiter/"]
 
-COPY ["build/libs/*", "/arbiter/"]
 WORKDIR /arbiter
+RUN ./gradlew build
 
-ENTRYPOINT ["java", "-jar", "arbiter-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["./gradlew", "run"]
