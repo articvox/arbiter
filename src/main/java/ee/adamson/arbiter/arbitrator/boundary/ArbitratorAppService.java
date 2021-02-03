@@ -1,6 +1,6 @@
 package ee.adamson.arbiter.arbitrator.boundary;
 
-import ee.adamson.arbiter.control.CalculatorFactory;
+import ee.adamson.arbiter.arbitrator.control.CalculatorFactory;
 import ee.adamson.arbiter.evaluation.Evaluation;
 import ee.adamson.arbiter.evaluation.EvaluationStrategy;
 import ee.adamson.arbiter.evaluation.step.OfferNextAcceptableLoanPeriod;

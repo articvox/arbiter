@@ -1,4 +1,4 @@
-package ee.adamson.arbiter.control;
+package ee.adamson.arbiter.arbitrator.control;
 
 import ee.adamson.arbiter.Configuration;
 import ee.adamson.arbiter.evaluation.calculator.Calculator;
